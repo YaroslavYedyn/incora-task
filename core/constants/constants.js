@@ -1,3 +1,7 @@
 module.exports = {
     AUTHORIZATION: 'Authorization',
+    SOCKET_EVENTS_ENUM: {
+        NEW_NOTIFICATION: 'NEW_NOTIFICATION',
+        SHOW_NOTIFICATION: 'SHOW_NOTIFICATION'
+    }
 };

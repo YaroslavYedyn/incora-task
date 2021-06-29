@@ -44,12 +44,12 @@ module.exports = {
     },
     updateUser: async (req, res, next) => {
         try {
-            const { id, user, body } = req;
-            console.log(user);
-            const updateUser = await userService.updateUser(body, id);
+            const { id, body } = req;
+            await userService.updateUser(body, id);
 
-            console.log(updateUser);
-            res.json('ok');
+            const { dataValues } = await userService.getUserById(id);
+
+            res.json(dataValues);
         } catch (e) {
             next(e);
         }
