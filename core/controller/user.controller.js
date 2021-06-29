@@ -41,5 +41,17 @@ module.exports = {
         } catch (e) {
             next(e);
         }
+    },
+    updateUser: async (req, res, next) => {
+        try {
+            const { id, user, body } = req;
+            console.log(user);
+            const updateUser = await userService.updateUser(body, id);
+
+            console.log(updateUser);
+            res.json('ok');
+        } catch (e) {
+            next(e);
+        }
     }
 };
